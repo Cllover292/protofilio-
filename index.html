@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Fikri Raditia Putra</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 50px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #fff;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: #667eea;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        section {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            animation: slideUp 1s ease-out;
+        }
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .info-item {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .info-item:hover {
+            transform: translateY(-10px);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.2);
+            margin-top: 40px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .typing {
+            border-right: 2px solid #fff;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { border-color: transparent; }
+            51%, 100% { border-color: #fff; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Screenshot_2025_1202_184843.png" alt="Foto Profil Fikri Raditia Putra" class="profile-pic">
+        <h1>Fikri Raditia Putra</h1>
+        <p class="typing">Pelajar dan Penggemar Coding</p>
+    </header>
+    
+    <div class="container">
+        <section id="about">
+            <h2>Tentang Saya</h2>
+            <p>Saya adalah seorang remaja berusia 14 tahun yang lahir pada tanggal 26 Maret 2011, hari Sabtu. Saya memiliki IQ 109 dan sangat menyukai kebab sebagai makanan favorit saya. Hobi saya adalah bermain game dan coding, yang membuat saya selalu belajar hal baru setiap hari.</p>
+        </section>
+        
+        <section id="details">
+            <h2>Detail Pribadi</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>Umur</h3>
+                    <p>14 Tahun</p>
+                </div>
+                <div class="info-item">
+                    <h3>Tanggal Lahir</h3>
+                    <p>26 Maret 2011 (Sabtu)</p>
+                </div>
+                <div class="info-item">
+                    <h3>IQ</h3>
+                    <p>109</p>
+                </div>
+                <div class="info-item">
+                    <h3>Makanan Favorit</h3>
+                    <p>Kebab</p>
+                </div>
+                <div class="info-item">
+                    <h3>Hobi</h3>
+                    <p>Game & Coding</p>
+                </div>
+                <div class="info-item">
+                    <h3>Device</h3>
+                    <p>Vivo Y21 (64GB Internal)</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills">
+            <h2>Keahlian</h2>
+            <p>Saya sedang belajar HTML, CSS, dan JavaScript untuk membuat website seperti ini. Saya juga suka eksplorasi teknologi dan game untuk mengasah kreativitas.</p>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Fikri Raditia Putra. Dibuat dengan ❤️ menggunakan HTML, CSS, dan JS.</p>
+    </footer>
+    
+    <script>
+        // Animasi typing effect
+        const typingText = document.querySelector('.typing');
+        const text = "Pelajar dan Penggemar Coding";
+        let index = 0;
+        
+        function typeWriter() {
+            if (index < text.length) {
+                typingText.innerHTML = text.substring(0, index + 1);
+                index++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        
+        window.onload = typeWriter;
+        
+        // Smooth scroll untuk navigasi (jika ditambahkan)
+        // Tambahkan efek hover interaktif
+        document.querySelectorAll('.info-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.boxShadow = '0 8px 16px rgba(0,0,0,0.4)';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+  </html>
