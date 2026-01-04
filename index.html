@@ -194,44 +194,26 @@
 </head>
 <body>
     <header>
-        <h1>Confession untuk Bilqis 💖🌸</h1>
-        <p class="romantic-message">Bilqis, aku ingin menyatakan perasaanku padamu. Setiap bunga mewakili keindahanmu, dan kembang api ini adalah ledakan cinta yang tak bisa aku sembunyikan lagi. Aku suka padamu! ✨</p>
+        <h1>Confess for u Bilqis 🦋🌸</h1>
+        <p class="romantic-message">gw udah lama suka sama lu cuma gw baru berani bilang sekarang, mungkin untuk sekarang lu belum tau gw siapa, inti nya gw ingin menyampaikan perasaan gw, dan sorry kalo gw ganggu dan juga sorry kalo alay, tapi inilah effort gw, walaupun agak telat but happy new year for u. ✨< ✨</p>
     </header>
     <div class="container">
         <form id="confessionForm">
             <textarea id="message" placeholder="Tulis perasaanmu di sini... (Anonim atau dengan nama)" required></textarea>
-            <button type="submit">Kirim Confession dan Nyatakan Perasaan 💕</button>
+            <button type="submit">Kirim pesan buat gw (yang buat web ini)</button>
         </form>
         <div class="confessions" id="confessionsList">
-            <h2>Confession Terbaru</h2>
+            <h2>Pesan ⤵️</h2>
         </div>
         <div class="response-buttons">
-            <h3>Bilqis, apakah kamu punya perasaan balik? 💕</h3>
-            <button id="btnPunya" class="response-btn">Punya 😍</button>
-            <button id="btnTidak" class="response-btn">Tidak 😔</button>
-        </div>
-        <button id="showGalleryBtn" class="show-gallery-btn">Lihat Foto Bilqis 💖</button>
-        <div id="photoGallery" class="gallery hidden">
-            <h2>Foto-Foto Bilqis 🦋</h2>
-            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+1" alt="Foto Bilqis 1" class="photo">
-            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+2" alt="Foto Bilqis 2" class="photo">
-            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+3" alt="Foto Bilqis 3" class="photo">
-            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+4" alt="Foto Bilqis 4" class="photo">
-            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+5" alt="Foto Bilqis 5" class="photo">
-            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+6" alt="Foto Bilqis 6" class="photo">
-            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+7" alt="Foto Bilqis 7" class="photo">
-            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+8" alt="Foto Bilqis 8" class="photo">
-            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+9" alt="Foto Bilqis 9" class="photo">
-            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+10" alt="Foto Bilqis 10" class="photo">
-        </div>
         <!-- Kontrol Musik -->
         <div class="music-controls">
-            <h3>Pilih Musik Romantis 🎶</h3>
+            <h3>Pilih Musik  🎶</h3>
             <select id="songSelect">
                 <option value="0">Pilih Lagu...</option>
-                <option value="1">Lagu 1: Perfect - Ed Sheeran</option>
-                <option value="2">Lagu 2: All of Me - John Legend</option>
-                <option value="3">Lagu 3: Thinking Out Loud - Ed Sheeran</option>
+                <option value="1">Lagu 1: Amazing-Rex Orange County</option>
+                <option value="2">Lagu 2: Surat Cinta Untuk Starla</option>
+                <option value="3">Lagu 3: Hargai Aku - Armada</option>
             </select>
             <button id="playPauseBtn">Play</button>
             <div class="current-song" id="currentSong">Lagu yang dipilih: Tidak ada</div>
@@ -248,9 +230,9 @@
         // Array lagu
         const songs = [
             { title: 'Tidak ada', src: '' },
-            { title: 'Perfect - Ed Sheeran', src: 'path/to/perfect.mp3' }, // Ganti dengan path asli
-            { title: 'All of Me - John Legend', src: 'path/to/allofme.mp3' }, // Ganti dengan path asli
-            { title: 'Thinking Out Loud - Ed Sheeran', src: 'path/to/thinkingoutloud.mp3' } // Ganti dengan path asli
+            { title: 'Rex Orange County - Amazing', src: 'lagu.mp3' }, // Ganti dengan path asli
+            { title: 'Surat Cinta Untuk Starla', src: 'lagu2.mp3' }, // Ganti dengan path asli
+            { title: 'Armada - Hargai aku', src: 'lagu3.mp3' } // Ganti dengan path asli
         ];
 
         const audio = document.getElementById('backgroundMusic');
@@ -374,4 +356,118 @@
         });
     </script>
 </body>
+</html>tedIndex = this.value;
+            if (selectedIndex > 0) {
+                audioSource.src = songs[selectedIndex].src;
+                audio.load();
+                currentSong.textContent = `Lagu yang dipilih: ${songs[selectedIndex].title}`;
+                playPauseBtn.textContent = 'Play';
+            } else {
+                currentSong.textContent = 'Lagu yang dipilih: Tidak ada';
+            }
+        });
+
+        // Fungsi play/pause
+        playPauseBtn.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play();
+                this.textContent = 'Pause';
+            } else {
+                audio.pause();
+                this.textContent = 'Play';
+            }
+        });
+
+        // Fireworks
+        function createFireworks() {
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.className = 'firework';
+                    firework.style.left = Math.random() * window.innerWidth + 'px';
+                    firework.style.top = Math.random() * window.innerHeight + 'px';
+                    document.body.appendChild(firework);
+                    setTimeout(() => firework.remove(), 2000);
+                }, Math.random() * 2000);
+            }
+        }
+        window.addEventListener('load', createFireworks);
+
+        // Butterflies
+        function createButterflies() {
+            for (let i = 0; i < 25; i++) {
+                const butterfly = document.createElement('div');
+                butterfly.className = 'butterfly';
+                butterfly.textContent = '🦋';
+                butterfly.style.left = Math.random() * window.innerWidth + 'px';
+                butterfly.style.top = Math.random() * window.innerHeight + 'px';
+                butterfly.style.animationDelay = Math.random() * 5 + 's';
+                document.body.appendChild(butterfly);
+            }
+        }
+        window.addEventListener('load', createButterflies);
+
+        // Form submission
+        document.getElementById('confessionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const message = document.getElementById('message').value;
+            if (message.trim()) {
+                let confessions = JSON.parse(localStorage.getItem('confessions')) || [];
+                confessions.push({ text: message, date: new Date().toLocaleString() });
+                localStorage.setItem('confessions', JSON.stringify(confessions));
+                displayConfessions();
+                document.getElementById('message').value = '';
+                alert('Perasaanmu telah dikirim! Semoga Bilqis merasakannya. 🌟');
+                createFireworks();
+            }
+        });
+
+        // Response buttons
+        document.getElementById('btnPunya').addEventListener('click', function() {
+            sendResponse('Punya');
+        });
+        document.getElementById('btnTidak').addEventListener('click', function() {
+            sendResponse('Tidak');
+        });
+
+        function sendResponse(answer) {
+            const timestamp = new Date().toLocaleString();
+            const subject = 'Jawaban dari Confession Website';
+            const body = `Jawaban Bilqis: ${answer}\nWaktu: ${timestamp}\n\nIni adalah respons otomatis dari website confession.`;
+            const mailtoLink = `mailto:your-email@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`; // Ganti email
+            window.location.href = mailtoLink;
+            alert(`Jawaban "${answer}" telah disiapkan untuk dikirim ke pemilik web via email. Pastikan kirim emailnya!`);
+            let responses = JSON.parse(localStorage.getItem('responses')) || [];
+            responses.push({ answer: answer, date: timestamp });
+            localStorage.setItem('responses', JSON.stringify(responses));
+        }
+
+        // Display confessions
+        function displayConfessions() {
+            const list = document.getElementById('confessionsList');
+            list.innerHTML = '<h2>Confession Terbaru</h2>';
+            const confessions = JSON.parse(localStorage.getItem('confessions')) || [];
+            confessions.forEach(conf => {
+                const div = document.createElement('div');
+                div.className = 'confession';
+                div.innerHTML = `<p>${conf.text}</p><small>${conf.date}</small>`;
+                list.appendChild(div);
+            });
+        }
+        displayConfessions();
+
+        // Toggle galeri foto
+        document.getElementById('showGalleryBtn').addEventListener('click', function() {
+            const gallery = document.getElementById('photoGallery');
+            if (gallery.classList.contains('hidden')) {
+                gallery.classList.remove('hidden');
+                this.textContent = 'Sembunyikan Foto Bilqis 😊';
+            } else {
+                gallery.classList.add('hidden');
+                this.textContent = 'Lihat Foto Bilqis 💖';
+            }
+        });
+    </script>
+</body>
     </html>
+
