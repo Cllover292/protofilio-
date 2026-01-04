@@ -3,186 +3,375 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Fikri Raditia Putra</title>
+    <title>Confession untuk Bilqis - Tema Bunga dan Kembang Api</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffe6f7, #ffb3d9), url('https://example.com/flowers-bg.jpg') no-repeat center center fixed; /* Ganti dengan gambar bunga asli */
+            background-size: cover;
+            color: #333;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
             overflow-x: hidden;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
         }
         header {
             text-align: center;
-            padding: 50px 0;
-            animation: fadeIn 2s ease-in-out;
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-bottom: 2px solid #ff69b4;
         }
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        h1 {
+            color: #ff1493;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        header p {
+        .romantic-message {
             font-size: 1.2em;
-            margin: 10px 0;
+            color: #8b008b;
+            margin-top: 10px;
         }
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: #fff;
+        .container {
+            max-width: 600px;
             margin: 20px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2em;
-            color: #667eea;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
-        section {
-            margin: 40px 0;
             padding: 20px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
-            backdrop-filter: blur(10px);
-            animation: slideUp 1s ease-out;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        section h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            text-align: center;
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            border: 2px solid #ffb3d9;
+            border-radius: 5px;
+            font-size: 1em;
+            resize: vertical;
         }
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .info-item {
-            background: rgba(255,255,255,0.2);
+        button {
+            display: block;
+            width: 100%;
             padding: 15px;
-            border-radius: 8px;
+            background: linear-gradient(45deg, #ff69b4, #ffd700);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: linear-gradient(45deg, #ff1493, #ffa500);
+        }
+        .confessions {
+            margin-top: 30px;
+        }
+        .confession {
+            background: #f9f9f9;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 5px solid #ff69b4;
+            border-radius: 5px;
+        }
+        .response-buttons {
             text-align: center;
+            margin-top: 30px;
+        }
+        .response-btn {
+            padding: 15px 30px;
+            margin: 10px;
+            background: linear-gradient(45deg, #ff69b4, #ffd700);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .response-btn:hover {
+            background: linear-gradient(45deg, #ff1493, #ffa500);
+        }
+        .show-gallery-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #ff69b4, #ffd700);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .show-gallery-btn:hover {
+            background: linear-gradient(45deg, #ff1493, #ffa500);
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            transition: opacity 0.5s ease;
+        }
+        .gallery.hidden {
+            display: none;
+        }
+        .photo {
+            width: 100%;
+            max-width: 600px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
-        .info-item:hover {
-            transform: translateY(-10px);
+        .photo:hover {
+            transform: scale(1.05);
         }
-        footer {
+        .music-controls {
             text-align: center;
-            padding: 20px;
-            background: rgba(0,0,0,0.2);
-            margin-top: 40px;
+            margin: 20px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .music-controls select, .music-controls button {
+            margin: 5px;
+            padding: 10px;
+            border: 2px solid #ffb3d9;
+            border-radius: 5px;
+            font-size: 1em;
         }
-        @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        .music-controls button {
+            background: #ff69b4;
+            color: white;
+            cursor: pointer;
         }
-        .typing {
-            border-right: 2px solid #fff;
-            animation: blink 1s infinite;
+        .music-controls button:hover {
+            background: #ff1493;
         }
-        @keyframes blink {
-            0%, 50% { border-color: transparent; }
-            51%, 100% { border-color: #fff; }
+        .current-song {
+            font-weight: bold;
+            color: #ff1493;
+            margin-top: 10px;
+        }
+        /* Fireworks animation */
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: explode 2s ease-out infinite;
+            pointer-events: none;
+        }
+        @keyframes explode {
+            0% { transform: scale(0); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.8; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+        /* Butterfly animation */
+        .butterfly {
+            position: absolute;
+            font-size: 2em;
+            color: #ff69b4;
+            animation: fly 10s linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+        @keyframes fly {
+            0% { transform: translateX(0) translateY(0) rotate(0deg); }
+            25% { transform: translateX(100px) translateY(-50px) rotate(90deg); }
+            50% { transform: translateX(200px) translateY(0) rotate(180deg); }
+            75% { transform: translateX(300px) translateY(-30px) rotate(270deg); }
+            100% { transform: translateX(400px) translateY(0) rotate(360deg); }
+        }
+        .butterfly:nth-child(odd) {
+            animation-duration: 12s;
+        }
+        .butterfly:nth-child(even) {
+            animation-duration: 15s;
         }
     </style>
 </head>
 <body>
     <header>
-        <!-- Tambahkan di dalam <body>, misalnya setelah <header> -->
-<audio id="background-music" controls autoplay loop>
-    <source src="lagu.mp3" type="audio/mpeg">
-    Browser Anda tidak mendukung elemen audio.
-</audio>
-        <img src="Screenshot_2025_1202_184843.png" alt="Foto Profil Fikri Raditia Putra" class="profile-pic">
-        <h1>Fikri Raditia Putra</h1>
-        <p class="typing">Pelajar dan Penggemar Coding</p>
+        <h1>Confession untuk Bilqis 💖🌸</h1>
+        <p class="romantic-message">Bilqis, aku ingin menyatakan perasaanku padamu. Setiap bunga mewakili keindahanmu, dan kembang api ini adalah ledakan cinta yang tak bisa aku sembunyikan lagi. Aku suka padamu! ✨</p>
     </header>
-    
     <div class="container">
-        <section id="about">
-            <h2>Tentang Saya</h2>
-            <p>Saya adalah seorang remaja berusia 14 tahun yang lahir pada tanggal 26 Maret 2011, hari Sabtu. Saya memiliki IQ 109 dan sangat menyukai kebab sebagai makanan favorit saya. Hobi saya adalah bermain game dan coding, yang membuat saya selalu belajar hal baru setiap hari.</p>
-        </section>
-        
-        <section id="details">
-            <h2>Detail Pribadi</h2>
-            <div class="info-grid">
-                <div class="info-item">
-                    <h3>Umur</h3>
-                    <p>14 Tahun</p>
-                </div>
-                <div class="info-item">
-                    <h3>Tanggal Lahir</h3>
-                    <p>26 Maret 2011 (Sabtu)</p>
-                </div>
-                <div class="info-item">
-                    <h3>IQ</h3>
-                    <p>109</p>
-                </div>
-                <div class="info-item">
-                    <h3>Makanan Favorit</h3>
-                    <p>Kebab</p>
-                </div>
-                <div class="info-item">
-                    <h3>Hobi</h3>
-                    <p>Game & Coding</p>
-                </div>
-                <div class="info-item">
-                    <h3>Device</h3>
-                    <p>Vivo Y21 (64GB Internal)</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="skills">
-            <h2>Keahlian</h2>
-            <p>Saya sedang belajar HTML, CSS, dan JavaScript untuk membuat website seperti ini. Saya juga suka eksplorasi teknologi dan game untuk mengasah kreativitas.</p>
-        </section>
+        <form id="confessionForm">
+            <textarea id="message" placeholder="Tulis perasaanmu di sini... (Anonim atau dengan nama)" required></textarea>
+            <button type="submit">Kirim Confession dan Nyatakan Perasaan 💕</button>
+        </form>
+        <div class="confessions" id="confessionsList">
+            <h2>Confession Terbaru</h2>
+        </div>
+        <div class="response-buttons">
+            <h3>Bilqis, apakah kamu punya perasaan balik? 💕</h3>
+            <button id="btnPunya" class="response-btn">Punya 😍</button>
+            <button id="btnTidak" class="response-btn">Tidak 😔</button>
+        </div>
+        <button id="showGalleryBtn" class="show-gallery-btn">Lihat Foto Bilqis 💖</button>
+        <div id="photoGallery" class="gallery hidden">
+            <h2>Foto-Foto Bilqis 🦋</h2>
+            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+1" alt="Foto Bilqis 1" class="photo">
+            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+2" alt="Foto Bilqis 2" class="photo">
+            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+3" alt="Foto Bilqis 3" class="photo">
+            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+4" alt="Foto Bilqis 4" class="photo">
+            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+5" alt="Foto Bilqis 5" class="photo">
+            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+6" alt="Foto Bilqis 6" class="photo">
+            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+7" alt="Foto Bilqis 7" class="photo">
+            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+8" alt="Foto Bilqis 8" class="photo">
+            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+9" alt="Foto Bilqis 9" class="photo">
+            <img src="https://via.placeholder.com/600x800?text=Foto+Bilqis+10" alt="Foto Bilqis 10" class="photo">
+        </div>
+        <!-- Kontrol Musik -->
+        <div class="music-controls">
+            <h3>Pilih Musik Romantis 🎶</h3>
+            <select id="songSelect">
+                <option value="0">Pilih Lagu...</option>
+                <option value="1">Lagu 1: Perfect - Ed Sheeran</option>
+                <option value="2">Lagu 2: All of Me - John Legend</option>
+                <option value="3">Lagu 3: Thinking Out Loud - Ed Sheeran</option>
+            </select>
+            <button id="playPauseBtn">Play</button>
+            <div class="current-song" id="currentSong">Lagu yang dipilih: Tidak ada</div>
+        </div>
     </div>
-    
-    <footer>
-        <p>&copy; 2023 Fikri Raditia Putra. Dibuat dengan ❤️ menggunakan HTML, CSS, dan JS.</p>
-    </footer>
-    
+
+    <!-- Audio -->
+    <audio id="backgroundMusic" loop>
+        <source id="audioSource" src="" type="audio/mpeg">
+        Browser Anda tidak mendukung pemutaran audio.
+    </audio>
+
     <script>
-        // Animasi typing effect
-        const typingText = document.querySelector('.typing');
-        const text = "Pelajar dan Penggemar Coding";
-        let index = 0;
-        
-        function typeWriter() {
-            if (index < text.length) {
-                typingText.innerHTML = text.substring(0, index + 1);
-                index++;
-                setTimeout(typeWriter, 100);
+        // Array lagu
+        const songs = [
+            { title: 'Tidak ada', src: '' },
+            { title: 'Perfect - Ed Sheeran', src: 'path/to/perfect.mp3' }, // Ganti dengan path asli
+            { title: 'All of Me - John Legend', src: 'path/to/allofme.mp3' }, // Ganti dengan path asli
+            { title: 'Thinking Out Loud - Ed Sheeran', src: 'path/to/thinkingoutloud.mp3' } // Ganti dengan path asli
+        ];
+
+        const audio = document.getElementById('backgroundMusic');
+        const audioSource = document.getElementById('audioSource');
+        const songSelect = document.getElementById('songSelect');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const currentSong = document.getElementById('currentSong');
+
+        // Fungsi pilih lagu
+        songSelect.addEventListener('change', function() {
+            const selectedIndex = this.value;
+            if (selectedIndex > 0) {
+                audioSource.src = songs[selectedIndex].src;
+                audio.load();
+                currentSong.textContent = `Lagu yang dipilih: ${songs[selectedIndex].title}`;
+                playPauseBtn.textContent = 'Play';
+            } else {
+                currentSong.textContent = 'Lagu yang dipilih: Tidak ada';
+            }
+        });
+
+        // Fungsi play/pause
+        playPauseBtn.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play();
+                this.textContent = 'Pause';
+            } else {
+                audio.pause();
+                this.textContent = 'Play';
+            }
+        });
+
+        // Fireworks
+        function createFireworks() {
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.className = 'firework';
+                    firework.style.left = Math.random() * window.innerWidth + 'px';
+                    firework.style.top = Math.random() * window.innerHeight + 'px';
+                    document.body.appendChild(firework);
+                    setTimeout(() => firework.remove(), 2000);
+                }, Math.random() * 2000);
             }
         }
-        
-        window.onload = typeWriter;
-        
-        // Smooth scroll untuk navigasi (jika ditambahkan)
-        // Tambahkan efek hover interaktif
-        document.querySelectorAll('.info-item').forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                item.style.boxShadow = '0 8px 16px rgba(0,0,0,0.4)';
+        window.addEventListener('load', createFireworks);
+
+        // Butterflies
+        function createButterflies() {
+            for (let i = 0; i < 25; i++) {
+                const butterfly = document.createElement('div');
+                butterfly.className = 'butterfly';
+                butterfly.textContent = '🦋';
+                butterfly.style.left = Math.random() * window.innerWidth + 'px';
+                butterfly.style.top = Math.random() * window.innerHeight + 'px';
+                butterfly.style.animationDelay = Math.random() * 5 + 's';
+                document.body.appendChild(butterfly);
+            }
+        }
+        window.addEventListener('load', createButterflies);
+
+        // Form submission
+        document.getElementById('confessionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const message = document.getElementById('message').value;
+            if (message.trim()) {
+                let confessions = JSON.parse(localStorage.getItem('confessions')) || [];
+                confessions.push({ text: message, date: new Date().toLocaleString() });
+                localStorage.setItem('confessions', JSON.stringify(confessions));
+                displayConfessions();
+                document.getElementById('message').value = '';
+                alert('Perasaanmu telah dikirim! Semoga Bilqis merasakannya. 🌟');
+                createFireworks();
+            }
+        });
+
+        // Response buttons
+        document.getElementById('btnPunya').addEventListener('click', function() {
+            sendResponse('Punya');
+        });
+        document.getElementById('btnTidak').addEventListener('click', function() {
+            sendResponse('Tidak');
+        });
+
+        function sendResponse(answer) {
+            const timestamp = new Date().toLocaleString();
+            const subject = 'Jawaban dari Confession Website';
+            const body = `Jawaban Bilqis: ${answer}\nWaktu: ${timestamp}\n\nIni adalah respons otomatis dari website confession.`;
+            const mailtoLink = `mailto:your-email@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`; // Ganti email
+            window.location.href = mailtoLink;
+            alert(`Jawaban "${answer}" telah disiapkan untuk dikirim ke pemilik web via email. Pastikan kirim emailnya!`);
+            let responses = JSON.parse(localStorage.getItem('responses')) || [];
+            responses.push({ answer: answer, date: timestamp });
+            localStorage.setItem('responses', JSON.stringify(responses));
+        }
+
+        // Display confessions
+        function displayConfessions() {
+            const list = document.getElementById('confessionsList');
+            list.innerHTML = '<h2>Confession Terbaru</h2>';
+            const confessions = JSON.parse(localStorage.getItem('confessions')) || [];
+            confessions.forEach(conf => {
+                const div = document.createElement('div');
+                div.className = 'confession';
+                div.innerHTML = `<p>${conf.text}</p><small>${conf.date}</small>`;
+                list.appendChild(div);
             });
-            item.addEventListener('mouseleave', () => {
-                item.style.boxShadow = 'none';
-            });
+        }
+        displayConfessions();
+
+        // Toggle galeri foto
+        document.getElementById('showGalleryBtn').addEventListener('click', function() {
+            const gallery = document.getElementById('photoGallery');
+            if (gallery.classList.contains('hidden')) {
+                gallery.classList.remove('hidden');
+                this.textContent = 'Sembunyikan Foto Bilqis 😊';
+            } else {
+                gallery.classList.add('hidden');
+                this.textContent = 'Lihat Foto Bilqis 💖';
+            }
         });
     </script>
 </body>
-  </html>
-
-
+    </html>
